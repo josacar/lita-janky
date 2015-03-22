@@ -4,10 +4,13 @@ SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
   SimpleCov::Formatter::HTMLFormatter,
   Coveralls::SimpleCov::Formatter
 ]
-SimpleCov.start { add_filter "/spec/" }
+SimpleCov.start do
+  add_filter '/spec/'
+  add_filter '/vendor/'
+end
 
-require "lita-janky"
-require "lita/rspec"
+require 'lita-janky'
+require 'lita/rspec'
 
 # A compatibility mode is provided for older plugins upgrading from Lita 3. Since this plugin
 # was generated with Lita 4, the compatibility mode should be left disabled.
